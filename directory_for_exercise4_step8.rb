@@ -17,21 +17,24 @@ def input_students
   students
 end
 
+
+
 def print_header
   puts "The students of Villian Academy"
   puts "-------------"
 end
 
-
 def print(students)
-  puts "Enter first letter of name"
-  initial_character = gets.chomp
-  students.each do |student|
-    if student[:name][0] == initial_character
-    puts "#{student[:name]} (#{student[:cohort]} cohort)"
-    # puts "#{student[:name][0]}"
-    end
+  length = students.length
+  counter = 0
+  while counter < length
+    puts "#{students[counter][:name]} (#{students[counter][:cohort]} cohort)"
+    counter =  counter + 1
+    # puts "#{students[:name]} (#{students[:cohort]} cohort)"
   end
+  # students.each do |student|
+  #   puts "#{student[:name]} (#{student[:cohort]} cohort)"
+  # end
 end
 
 def print_footer(names)
@@ -40,7 +43,7 @@ end
 
 #nothing happens till we call the methods
 
-students = input_students    
+students = input_students  
 print_header
 print(students)
 print_footer(students)
